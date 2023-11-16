@@ -28,7 +28,11 @@ if prompt:
     
     response = palm.chat(messages=prompt)  
     reply = response.last
-    st.session_state.messages.append({"ROLE" : "ASSISTANT", "CONTENT" : reply})
+    if reply != None:
+        st.session_state.messages.append({"ROLE" : "ASSISTANT", "CONTENT" : reply})
 
     with st.chat_message("ASSISTANT"):
-        st.write(reply)
+        if reply != None:
+            st.write(reply)
+        else:
+            st.write("I couldn't understand")
