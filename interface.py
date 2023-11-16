@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 import google.generativeai as palm
 
-palm.configure(api_key = os.getenv("api_key"))
+palm.configure(api_key = "AIzaSyAC4PqD3EnrBUWpDZoMJzi37v04zSQZM6Y")
 model_id="models/chat-bison-001"
 
 if "messages" not in st.session_state:
